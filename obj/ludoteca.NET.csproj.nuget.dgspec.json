@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\julia.campos\\Documents\\ludoteca.NET\\ludoteca.NET.csproj": {}
+    "C:\\Users\\Julia Scarpi\\Documents\\ludoteca.NET\\ludoteca.NET.csproj": {}
   },
   "projects": {
-    "C:\\Users\\julia.campos\\Documents\\ludoteca.NET\\ludoteca.NET.csproj": {
+    "C:\\Users\\Julia Scarpi\\Documents\\ludoteca.NET\\ludoteca.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\julia.campos\\Documents\\ludoteca.NET\\ludoteca.NET.csproj",
+        "projectUniqueName": "C:\\Users\\Julia Scarpi\\Documents\\ludoteca.NET\\ludoteca.NET.csproj",
         "projectName": "ludoteca.NET",
-        "projectPath": "C:\\Users\\julia.campos\\Documents\\ludoteca.NET\\ludoteca.NET.csproj",
-        "packagesPath": "C:\\Users\\julia.campos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\julia.campos\\Documents\\ludoteca.NET\\obj\\",
+        "projectPath": "C:\\Users\\Julia Scarpi\\Documents\\ludoteca.NET\\ludoteca.NET.csproj",
+        "packagesPath": "C:\\Users\\Julia Scarpi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Julia Scarpi\\Documents\\ludoteca.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\julia.campos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Julia Scarpi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
