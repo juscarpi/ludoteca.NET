@@ -5,10 +5,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        var jogos = new List<Jogo>();
-        var membros = new List<Membro>();
+        // --- MUDANÇA AQUI: Trocamos as 3 listas por um objeto 'Biblioteca' e usamos o Carregar() ---
+        Biblioteca biblioteca = Biblioteca.Carregar();
 
-        while (true) //menu
+        while (true) // Laço principal do menu
         {
             Console.Clear();
             Console.WriteLine("===LUDOTECA .NET===");
@@ -16,124 +16,198 @@ class Program
             Console.WriteLine("2- Cadastrar membro");
             Console.WriteLine("3- Listar jogos");
             Console.WriteLine("4- Listar membros");
+            Console.WriteLine("5- Emprestar Jogo");
+            Console.WriteLine("6- Devolver Jogo");
             Console.WriteLine("0- Sair");
             Console.Write("Opção: ");
 
-            string opcao = Console.ReadLine();// le a escolha do usuario
+            string opcao = Console.ReadLine();
 
             if (opcao == "1")
             {
                 Console.Clear();
-                Console.WriteLine("---Cadastro de Novo Jogo---\n");
-                Console.WriteLine("Digite '0' para voltar ao menu.\n");
-                while (true)//Para capturar os erros de validação no construtor da classe Jogo
+                Console.WriteLine("---Cadastro de Novo Jogo---");
+                while (true)
                 {
                     try
                     {
-                        Console.Write("Nome do Jogo: ");
+                        Console.Write("\nNome do Jogo (ou digite '0' para voltar): ");
                         string nome = Console.ReadLine();
                         if (nome == "0") break;
 
-                        Console.Write("Fabricante: ");
+                        Console.Write("Fabricante (ou digite '0' para voltar): ");
                         string fabricante = Console.ReadLine();
                         if (fabricante == "0") break;
 
-                        Console.Write("Ano de Lançamento : ");
-                        string inputAno = Console.ReadLine(); 
-                        if (inputAno == "0") break;           
-                        int ano = Convert.ToInt32(inputAno);   
+                        Console.Write("Ano de Lançamento (ou digite '0' para voltar): ");
+                        string inputAno = Console.ReadLine();
+                        if (inputAno == "0") break;
+                        int ano = Convert.ToInt32(inputAno);
 
                         Jogo novoJogo = new Jogo(nome, fabricante, ano);
-                        jogos.Add(novoJogo);
-                        Console.WriteLine("Jogo cadastrado com sucesso!");
-
+                        biblioteca.Jogos.Add(novoJogo); // <-- MUDANÇA AQUI
+                        Console.WriteLine("\nJogo cadastrado com sucesso!");
                         Console.ReadKey();
                         break;
                     }
-                    catch (ArgumentException ex) 
-                    {
-                        Console.WriteLine($"\nErro de validação: {ex.Message}");
-                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
-                        Console.ReadKey();
-                    }
-                    catch (FormatException)
-                    {
-                        Console.WriteLine("\nErro de formato: O ano de lançamento deve ser um número.");
-                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
-                        Console.ReadKey();
-                    }
-                    catch (Exception ex)
-                    {
-                        // Mensagem genérica para qualquer outro erro que não previmos
-                        Console.WriteLine($"\nOcorreu um erro inesperado: {ex.Message}");
-                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
-                        Console.ReadKey();
-                    }
+                    catch (ArgumentException ex) { Console.WriteLine($"\nErro: {ex.Message}"); Console.ReadKey(); }
+                    catch (FormatException) { Console.WriteLine("\nErro: O ano deve ser um número."); Console.ReadKey(); }
+                    catch (Exception ex) { Console.WriteLine($"\nErro inesperado: {ex.Message}"); Console.ReadKey(); }
                 }
             }
-
             else if (opcao == "2")
             {
                 Console.Clear();
-                Console.WriteLine("---Cadastro de Novo Membro---\n");
-                Console.Write("Digite '0' para voltar ao menu.");
-                while (true)//Para capturar os erros de validação no construtor da classe Membro
+                Console.WriteLine("---Cadastro de Novo Membro---");
+                while (true)
                 {
                     try
-                    {                       
-                        Console.Write("\nNome do Membro: ");
+                    {
+                        Console.Write("\nNome do Membro (ou digite '0' para voltar): ");
                         string nome = Console.ReadLine();
                         if (nome == "0") break;
 
-                        Console.Write("Matricula: ");
+                        Console.Write("Matricula (8 números) (ou digite '0' para voltar): ");
                         string matricula = Console.ReadLine();
-                        if (nome == "0") break;
+                        if (matricula == "0") break;
 
                         Membro novoMembro = new Membro(nome, matricula);
-                        membros.Add(novoMembro);
-                        Console.Write("Membro cadastrado com sucesso!");
+                        biblioteca.Membros.Add(novoMembro); // <-- MUDANÇA AQUI
+                        Console.WriteLine("\nMembro cadastrado com sucesso!");
                         Console.ReadKey();
                         break;
                     }
-                    catch (ArgumentException ex) 
-                    {
-                        Console.WriteLine($"\nErro de validação: {ex.Message}");
-                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
-                        Console.ReadKey();
-                    }
+                    catch (ArgumentException ex) { Console.WriteLine($"\nErro: {ex.Message}"); Console.ReadKey(); }
+                    catch (Exception ex) { Console.WriteLine($"\nErro inesperado: {ex.Message}"); Console.ReadKey(); }
                 }
             }
-
             else if (opcao == "3")
             {
                 Console.Clear();
-                Console.WriteLine("---Lista de Jogos---\n");
-                if (jogos.Count == 0)
+                Console.WriteLine("---Lista de Jogos---");
+                if (biblioteca.Jogos.Count == 0) // <-- MUDANÇA AQUI
                 {
                     Console.WriteLine("Nenhum jogo cadastrado ainda.");
                 }
                 else
                 {
-                    foreach (var jogo in jogos)
+                    // --- MUDANÇA AQUI: Trocamos 'var' por 'Jogo' ---
+                    foreach (Jogo jogo in biblioteca.Jogos)
                     {
-                        string status = jogo.EstaEmprestado ? "Emprestado" : "Disponivel";
-                        Console.WriteLine($"Nome: {jogo.Nome} ({jogo.AnoLancamento}) - Fabricante: {jogo.Fabricante} | Status {status}");
+                        string status = jogo.EstaEmprestado ? "Emprestado" : "Disponível";
+                        Console.WriteLine($"Nome: {jogo.Nome} ({jogo.AnoLancamento}) - Fabricante: {jogo.Fabricante} | Status: {status}");
+                    }
+                }
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+            else if (opcao == "4")
+            {
+                Console.Clear();
+                Console.WriteLine("--- Lista de Membros ---");
+                if (biblioteca.Membros.Count == 0) // <-- MUDANÇA AQUI
+                {
+                    Console.WriteLine("Nenhum membro cadastrado ainda.");
+                }
+                else
+                {
+                    // --- MUDANÇA AQUI: Trocamos 'var' por 'Membro' ---
+                    foreach (Membro membro in biblioteca.Membros)
+                    {
+                        Console.WriteLine($"Nome: {membro.Nome} | Matrícula: {membro.Matricula}");
+                    }
+                }
+                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+            else if (opcao == "5")
+            {
+                while (true)
+                {
+                    try
+                    {
+                        Console.Clear();
+                        Console.WriteLine("--- Registro de Novo Empréstimo ---");
+
+                        Console.Write("Digite a matrícula do membro (ou '0' para voltar): ");
+                        string matriculaInput = Console.ReadLine();
+                        if (matriculaInput == "0") break;
+
+                        Console.Write("Digite o nome do jogo (ou '0' para voltar): ");
+                        string nomeJogoInput = Console.ReadLine();
+                        if (nomeJogoInput == "0") break;
+
+                        // --- MUDANÇA AQUI: Usamos a lista de membros da biblioteca ---
+                        Membro membroEncontrado = biblioteca.Membros.Find(m => m.Matricula == matriculaInput);
+                        if (membroEncontrado == null) throw new Exception("Membro não encontrado com a matrícula informada.");
+
+                        // --- MUDANÇA AQUI: Usamos a lista de jogos da biblioteca ---
+                        Jogo jogoEncontrado = biblioteca.Jogos.Find(j => j.Nome.ToLower() == nomeJogoInput.ToLower());
+                        if (jogoEncontrado == null) throw new Exception("Jogo não encontrado com o nome informado.");
+
+                        Emprestimo novoEmprestimo = new Emprestimo(jogoEncontrado, membroEncontrado);
+                        biblioteca.Emprestimos.Add(novoEmprestimo); // <-- MUDANÇA AQUI
+
+                        Console.WriteLine("\nEmpréstimo registrado com sucesso!");
+                        Console.WriteLine($"Jogo '{jogoEncontrado.Nome}' emprestado para '{membroEncontrado.Nome}'.");
+                        Console.ReadKey();
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"\nErro ao registrar empréstimo: {ex.Message}");
+                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
+                        Console.ReadKey();
                     }
                 }
             }
+            else if (opcao == "6")
+            {
+                while (true)
+                {
+                    try
+                    {
+                        Console.Clear();
+                        Console.WriteLine("--- Registro de Devolução ---");
 
+                        Console.Write("Digite o nome do jogo a ser devolvido (ou '0' para voltar): ");
+                        string nomeJogoInput = Console.ReadLine();
+                        if (nomeJogoInput == "0") break;
+                        
+                        // --- MUDANÇA AQUI: Usamos a lista de empréstimos da biblioteca ---
+                        Emprestimo emprestimoAtivo = biblioteca.Emprestimos.Find(e =>
+                            e.JogoEmprestado.Nome.ToLower() == nomeJogoInput.ToLower() &&
+                            e.DataDevolucao == null);
+
+                        if (emprestimoAtivo == null) throw new Exception("Não foi encontrado um empréstimo ativo para este jogo.");
+
+                        emprestimoAtivo.RegistrarDevolucao();
+
+                        Console.WriteLine("\nDevolução registrada com sucesso!");
+                        Console.ReadKey();
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"\nErro ao registrar devolução: {ex.Message}");
+                        Console.WriteLine("Pressione qualquer tecla para tentar novamente...");
+                        Console.ReadKey();
+                    }
+                }
+            }
             else if (opcao == "0")
             {
+                // --- MUDANÇA AQUI: Chamamos o método Salvar() da biblioteca ---
+                biblioteca.Salvar();
                 Console.WriteLine("Obrigado por usar o sistema!");
+                Console.ReadKey();
                 break;
             }
             else
             {
                 Console.WriteLine("Opção inválida. Tente novamente.");
+                Console.ReadKey();
             }
-
-            Console.WriteLine("\nPressione qualquer tecla para continuar...");
-            Console.ReadKey();
         }
     }
 }
