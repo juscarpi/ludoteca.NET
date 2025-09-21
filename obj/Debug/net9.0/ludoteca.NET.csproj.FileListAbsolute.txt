@@ -1,0 +1,44 @@
+C:\Users\julia.campos\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.exe
+C:\Users\julia.campos\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.deps.json
+C:\Users\julia.campos\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.runtimeconfig.json
+C:\Users\julia.campos\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.dll
+C:\Users\julia.campos\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.pdb
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfoInputs.cache
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfo.cs
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.csproj.CoreCompileInputs.cache
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.dll
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\refint\ludoteca.NET.dll
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.pdb
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.genruntimeconfig.cache
+C:\Users\julia.campos\Documents\ludoteca.NET\obj\Debug\net9.0\ref\ludoteca.NET.dll
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.exe
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.deps.json
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.runtimeconfig.json
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.dll
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.pdb
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfoInputs.cache
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfo.cs
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.csproj.CoreCompileInputs.cache
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.sourcelink.json
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.dll
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\refint\ludoteca.NET.dll
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.pdb
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.genruntimeconfig.cache
+C:\Users\Julia Scarpi\Documents\ludoteca.NET\obj\Debug\net9.0\ref\ludoteca.NET.dll
+C:\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.exe
+C:\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.deps.json
+C:\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.runtimeconfig.json
+C:\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.dll
+C:\ludoteca.NET\bin\Debug\net9.0\ludoteca.NET.pdb
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfoInputs.cache
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.AssemblyInfo.cs
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.csproj.CoreCompileInputs.cache
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.sourcelink.json
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.dll
+C:\ludoteca.NET\obj\Debug\net9.0\refint\ludoteca.NET.dll
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.pdb
+C:\ludoteca.NET\obj\Debug\net9.0\ludoteca.NET.genruntimeconfig.cache
+C:\ludoteca.NET\obj\Debug\net9.0\ref\ludoteca.NET.dll
