@@ -2,7 +2,7 @@
 
 ## 📖 Descrição do Projeto
 
-[cite_start]Este é um aplicativo de console desenvolvido em C# para o controle de empréstimo de jogos de tabuleiro de um clube universitário[cite: 4]. O sistema permite cadastrar jogos e membros, registrar empréstimos e devoluções, e persistir todos os dados em um arquivo JSON para que as informações não sejam perdidas ao fechar o programa.
+Este é um aplicativo de console desenvolvido em C# para o controle de empréstimo de jogos de tabuleiro de um clube universitário. O sistema permite cadastrar jogos e membros, registrar empréstimos e devoluções, e persistir todos os dados em um arquivo JSON para que as informações não sejam perdidas ao fechar o programa.
 
 Este projeto corresponde à entrega da **AV1**.
 
@@ -17,14 +17,14 @@ Este projeto corresponde à entrega da **AV1**.
 
 ## ✨ Funcionalidades (AV1)
 
-[cite_start]O programa implementa as seguintes funcionalidades obrigatórias[cite: 22]:
+O programa implementa as seguintes funcionalidades obrigatórias:
 
 * **Cadastro de Jogos:** Permite adicionar novos jogos ao acervo da ludoteca.
 * **Cadastro de Membros:** Permite registrar novos membros aptos a pegar jogos emprestados.
 * **Listagem de Jogos e Membros:** Exibe todos os jogos (com status de disponibilidade) e membros cadastrados.
-* [cite_start]**Empréstimo de Jogos:** Associa um jogo a um membro, alterando seu status para "Emprestado" e bloqueando novas retiradas[cite: 23].
+* **Empréstimo de Jogos:** Associa um jogo a um membro, alterando seu status para "Emprestado" e bloqueando novas retiradas.
 * **Devolução de Jogos:** Libera um jogo anteriormente emprestado, tornando-o "Disponível" novamente.
-* [cite_start]**Persistência de Dados:** Salva e carrega o estado da ludoteca (jogos, membros e empréstimos) no arquivo `biblioteca.json`[cite: 25].
+* **Persistência de Dados:** Salva e carrega o estado da ludoteca (jogos, membros e empréstimos) no arquivo `biblioteca.json`.
 * **Tratamento de Exceções:** Lida com erros de entrada do usuário e regras de negócio (ex: tentar emprestar um jogo indisponível) de forma controlada.
 
 ## 🚀 Como Executar o Projeto
@@ -38,7 +38,7 @@ dotnet build
 # Para executar o projeto
 dotnet run
 ```
-[cite_start]O projeto deve compilar e rodar sem erros para que a avaliação seja possível[cite: 41].
+O projeto deve compilar e rodar sem erros para que a avaliação seja possível.
 
 ## 📋 Artefatos e Marcações da AV1
 
@@ -47,13 +47,13 @@ Conforme solicitado nos critérios de avaliação, aqui estão os guias para os 
 ### 1. Diagrama UML
 
 O diagrama de classes UML, que modela as classes `Jogo`, `Membro`, `Emprestimo` e `Biblioteca`, pode ser encontrado no seguinte arquivo:
-* [cite_start]`/diagrama-uml.png` [cite: 39]
+* `/diagrama-uml.png`
 
 ### 2. Vídeo de Apresentação
 
 ### 3. Localização das Validações e Encapsulamento
 
-[cite_start]As validações nos construtores e o encapsulamento das propriedades (`private set`) estão localizados nos seguintes pontos[cite: 39]:
+As validações nos construtores e o encapsulamento das propriedades (`private set`) estão localizados nos seguintes pontos:
 
 * **Classe `Jogo.cs`**:
     * **Construtor e Validações:** Linhas 8-20
@@ -64,7 +64,7 @@ O diagrama de classes UML, que modela as classes `Jogo`, `Membro`, `Emprestimo` 
 
 ### 4. Localização das Marcações no Código
 
-As marcações exigidas para a avaliação estão nos seguintes arquivos e linhas[cite: 61]:
+As marcações exigidas para a avaliação estão nos seguintes arquivos e linhas:
 
 | Marcação | Descrição | Arquivo | Linhas |
 | :--- | :--- | :--- | :--- |
