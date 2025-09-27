@@ -8,7 +8,6 @@ Este projeto corresponde à entrega da **AV1**.
 
 ## 👥 Integrantes
 
-| Nome Completo | Matrícula |
 | Lucas Gabriel Simões Marinho | 06009936 |
 | Julia Scarpi Campos | 06006846 |
 | Flora Martins Di Risio Pinheiro | 06010591 |
