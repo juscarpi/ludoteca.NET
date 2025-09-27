@@ -51,6 +51,9 @@ O diagrama de classes UML, que modela as classes `Jogo`, `Membro`, `Emprestimo` 
 
 ### 2. Vídeo de Apresentação
 
+O vídeo de demonstração do sistema (duração máxima de 10 minutos) está disponível no link abaixo:
+https://youtu.be/kvZ8rsgnxl0?si=pElfLeKuGPuM1fi
+
 ### 3. Localização das Validações e Encapsulamento
 
 As validações nos construtores e o encapsulamento das propriedades (`private set`) estão localizados nos seguintes pontos:
