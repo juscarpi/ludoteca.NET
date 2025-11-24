@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Biblioteca biblioteca = Biblioteca.Carregar();
+        RelatorioService relatorioService = new RelatorioService();
 
         while (true) // Laço principal do menu
         {
@@ -85,22 +86,7 @@ class Program
             }
             else if (opcao == "3")
             {
-                Console.Clear();
-                Console.WriteLine("---Lista de Jogos---");
-                if (biblioteca.Jogos.Count == 0)
-                {
-                    Console.WriteLine("Nenhum jogo cadastrado ainda.");
-                }
-                else
-                {
-                    foreach (Jogo jogo in biblioteca.Jogos)
-                    {
-                        string status = jogo.EstaEmprestado ? "Emprestado" : "Disponível";
-                        Console.WriteLine($"Nome: {jogo.Nome} ({jogo.AnoLancamento}) - Fabricante: {jogo.Fabricante} | Status: {status}");
-                    }
-                }
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                Console.ReadKey();
+                relatorioService.ListarJogos(biblioteca.Jogos);
             }
             else if (opcao == "4")
             {
@@ -173,7 +159,7 @@ class Program
                         Console.Write("Digite o nome do jogo a ser devolvido (ou '0' para voltar): ");
                         string nomeJogoInput = Console.ReadLine();
                         if (nomeJogoInput == "0") break;
-                        
+
                         Emprestimo emprestimoAtivo = biblioteca.Emprestimos.Find(e =>
                             e.JogoEmprestado.Nome.ToLower() == nomeJogoInput.ToLower() &&
                             e.DataDevolucao == null);
