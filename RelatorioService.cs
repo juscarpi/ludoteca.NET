@@ -44,4 +44,33 @@ public class RelatorioService
         Console.WriteLine("\nPressione qualquer tecla para continuar...");
         Console.ReadKey();
     }
+
+    // [AV2] Relatório de Empréstimos para conferir os prazos
+    public void ListarEmprestimos(List<Emprestimo> emprestimos)
+    {
+        Console.Clear();
+        Console.WriteLine("--- Relatório de Empréstimos Ativos ---");
+        
+        if (emprestimos.Count == 0)
+        {
+            Console.WriteLine("Nenhum empréstimo ativo no momento.");
+        }
+        else
+        {
+            foreach (Emprestimo emp in emprestimos)
+            {
+                // Aqui vamos mostrar a data calculada pelo Polimorfismo!
+                string dataFormatada = emp.DataDevolucaoPrevista.ToShortDateString();
+                
+                Console.WriteLine($"Jogo: {emp.JogoEmprestado.Nome}");
+                Console.WriteLine($"Membro: {emp.Membro.Nome}");
+                Console.WriteLine($"Data Empréstimo: {emp.DataEmprestimo.ToShortDateString()}");
+                Console.WriteLine($"Devolução Prevista: {dataFormatada}");
+                Console.WriteLine("------------------------------------------------");
+            }
+        }
+        
+        Console.WriteLine("\nPressione qualquer tecla para continuar...");
+        Console.ReadKey();
+    }
 }

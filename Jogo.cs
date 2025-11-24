@@ -18,7 +18,7 @@ public class Jogo
         {
             throw new ArgumentException($"O ano de lançamento deve ser um valor entre 1000 e {anoAtual}.\n");
         }
-    
+
         //Se passar nas validações, atribuimos os valores
         Nome = nome;
         Fabricante = fabricante;
@@ -37,6 +37,12 @@ public class Jogo
     public void Devolver()
     {
         EstaEmprestado = false;
+    }
+    
+    // [AV2-4] Polimorfismo: Propriedade virtual que pode ser sobrescrita
+    public virtual int PrazoDevolucaoDias 
+    { 
+        get { return 7; } // Padrão: 7 dias
     }
 
 }

@@ -1,5 +1,58 @@
 {
-  "Jogos": [],
-  "Membros": [],
-  "Emprestimos": []
+  "Jogos": [
+    {
+      "Nome": "uno",
+      "Fabricante": "mattel",
+      "AnoLancamento": 2000,
+      "EstaEmprestado": true,
+      "PrazoDevolucaoDias": 7
+    },
+    {
+      "Nome": "uno barbie",
+      "Fabricante": "mattel",
+      "AnoLancamento": 2010,
+      "EstaEmprestado": true,
+      "PrazoDevolucaoDias": 3
+    }
+  ],
+  "Membros": [
+    {
+      "Nome": "julia",
+      "Matricula": "06006846"
+    }
+  ],
+  "Emprestimos": [
+    {
+      "JogoEmprestado": {
+        "Nome": "uno",
+        "Fabricante": "mattel",
+        "AnoLancamento": 2000,
+        "EstaEmprestado": true,
+        "PrazoDevolucaoDias": 7
+      },
+      "Membro": {
+        "Nome": "julia",
+        "Matricula": "06006846"
+      },
+      "DataEmprestimo": "2025-11-24T13:13:30.1676323-03:00",
+      "DataDevolucao": null,
+      "DataDevolucaoPrevista": "2025-12-01T13:13:30.1676323-03:00"
+    },
+    {
+      "JogoEmprestado": {
+        "Nome": "uno barbie",
+        "Fabricante": "mattel",
+        "AnoLancamento": 2010,
+        "EstaEmprestado": true,
+        "PrazoDevolucaoDias": 3
+      },
+      "Membro": {
+        "Nome": "julia",
+        "Matricula": "06006846"
+      },
+      "DataEmprestimo": "2025-11-24T13:13:43.1081047-03:00",
+      "DataDevolucao": null,
+      "DataDevolucaoPrevista": "2025-11-27T13:13:43.1081047-03:00"
+    }
+  ]
 }

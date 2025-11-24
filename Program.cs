@@ -23,40 +23,66 @@ class Program
             Console.Write("Opção: ");
 
             string opcao = Console.ReadLine();
-
             if (opcao == "1")
             {
                 Console.Clear();
                 Console.WriteLine("---Cadastro de Novo Jogo---");
                 while (true)
                 {
-                    // [AV1-5]
                     try
                     {
+                        // 1. Dados comuns a todos os jogos
                         Console.Write("\nNome do Jogo (ou digite '0' para voltar): ");
                         string nome = Console.ReadLine();
                         if (nome == "0") break;
 
-                        Console.Write("Fabricante (ou digite '0' para voltar): ");
+                        Console.Write("Fabricante: ");
                         string fabricante = Console.ReadLine();
-                        if (fabricante == "0") break;
 
-                        Console.Write("Ano de Lançamento (ou digite '0' para voltar): ");
-                        string inputAno = Console.ReadLine();
-                        if (inputAno == "0") break;
-                        int ano = Convert.ToInt32(inputAno);
+                        Console.Write("Ano de Lançamento: ");
+                        int ano = Convert.ToInt32(Console.ReadLine());
 
-                        Jogo novoJogo = new Jogo(nome, fabricante, ano);
+                        // 2. Pergunta o Tipo (Aqui entra a Herança/Polimorfismo)
+                        Console.WriteLine("\nSelecione o Tipo de Jogo:");
+                        Console.WriteLine("1 - Comum");
+                        Console.WriteLine("2 - Premium (Lançamento/Raro)");
+                        Console.WriteLine("3 - Expansão (DLC/Add-on)");
+                        Console.Write("Tipo: ");
+                        string tipo = Console.ReadLine();
+
+                        // Variável polimórfica: 'novoJogo' pode ser qualquer um dos 3 tipos!
+                        Jogo novoJogo = null;
+
+                        if (tipo == "1")
+                        {
+                            novoJogo = new Jogo(nome, fabricante, ano);
+                        }
+                        else if (tipo == "2")
+                        {
+                            novoJogo = new JogoPremium(nome, fabricante, ano);
+                        }
+                        else if (tipo == "3")
+                        {
+                            Console.Write("Qual o jogo original desta expansão?: ");
+                            string jogoOriginal = Console.ReadLine();
+                            novoJogo = new JogoExpansao(nome, fabricante, ano, jogoOriginal);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tipo inválido! Cadastrando como Comum por padrão.");
+                            novoJogo = new Jogo(nome, fabricante, ano);
+                        }
+
+                        // 3. Adiciona à lista (Polimorfismo: a lista aceita filhos de Jogo)
                         biblioteca.Jogos.Add(novoJogo);
-                        Console.WriteLine("\nJogo cadastrado com sucesso!");
+                        Console.WriteLine($"\nJogo '{novoJogo.Nome}' cadastrado com sucesso!");
                         Console.ReadKey();
                         break;
                     }
-                    catch (ArgumentException ex) { Console.WriteLine($"\nErro: {ex.Message}"); Console.ReadKey(); }
                     catch (FormatException) { Console.WriteLine("\nErro: O ano deve ser um número."); Console.ReadKey(); }
-                    catch (Exception ex) { Console.WriteLine($"\nErro inesperado: {ex.Message}"); Console.ReadKey(); }
+                    catch (Exception ex) { Console.WriteLine($"\nErro: {ex.Message}"); Console.ReadKey(); }
                 }
-            }
+            }         
             else if (opcao == "2")
             {
                 Console.Clear();
@@ -88,23 +114,10 @@ class Program
             {
                 relatorioService.ListarJogos(biblioteca.Jogos);
             }
+
             else if (opcao == "4")
             {
-                Console.Clear();
-                Console.WriteLine("--- Lista de Membros ---");
-                if (biblioteca.Membros.Count == 0)
-                {
-                    Console.WriteLine("Nenhum membro cadastrado ainda.");
-                }
-                else
-                {
-                    foreach (Membro membro in biblioteca.Membros)
-                    {
-                        Console.WriteLine($"Nome: {membro.Nome} | Matrícula: {membro.Matricula}");
-                    }
-                }
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                Console.ReadKey();
+                relatorioService.ListarMembros(biblioteca.Membros);
             }
             else if (opcao == "5")
             {
@@ -182,11 +195,9 @@ class Program
             }
             else if (opcao == "7")
             {
-                Console.Clear();
-                Console.WriteLine("--- Geração de Relatório ---");
-                Console.WriteLine("\nFuncionalidade completa de geração de relatório será implementada na AV2.");
-                Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
-                Console.ReadKey();
+                // Agora o RelatorioService cuida de tudo!
+                // Ele vai listar os empréstimos e mostrar as datas calculadas (3 ou 7 dias).
+                relatorioService.ListarEmprestimos(biblioteca.Emprestimos);
             }
             else if (opcao == "0")
             {
