@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// [AV2-1]
 public class RelatorioService
 {
     public void ListarJogos(List<Jogo> jogos)
@@ -45,7 +44,6 @@ public class RelatorioService
         Console.ReadKey();
     }
 
-    // [AV2] Relatório de Empréstimos para conferir os prazos
     public void ListarEmprestimos(List<Emprestimo> emprestimos)
     {
         Console.Clear();
@@ -59,7 +57,6 @@ public class RelatorioService
         {
             foreach (Emprestimo emp in emprestimos)
             {
-                // Aqui vamos mostrar a data calculada pelo Polimorfismo!
                 string dataFormatada = emp.DataDevolucaoPrevista.ToShortDateString();
                 
                 Console.WriteLine($"Jogo: {emp.JogoEmprestado.Nome}");

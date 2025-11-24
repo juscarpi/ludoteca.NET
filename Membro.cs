@@ -5,21 +5,19 @@ public class Membro
 
     public Membro(string nome, string matricula)
     {
-        //Validação do nome
-        if (string.IsNullOrWhiteSpace(nome))//Verifica se foi preenchido
+        if (string.IsNullOrWhiteSpace(nome))
         {
             throw new ArgumentException("O nome do membro não pode estar vazio.\n");
         }
         foreach (char caractere in nome)
         {
-            if (char.IsDigit(caractere))//Verifica se o nome contém números
+            if (char.IsDigit(caractere))
             {
                 throw new ArgumentException("O nome não pode conter números.\n");
             }
         }
 
-        //Validação da matricula
-        if (string.IsNullOrWhiteSpace(matricula))//Verifica se foi preenchido
+        if (string.IsNullOrWhiteSpace(matricula))
         {
             throw new ArgumentException("A matricula do membro não pode ser vazia.\n");
         }
@@ -27,7 +25,7 @@ public class Membro
         {
             throw new ArgumentException("A matricula deve conter 8 números.\n");
         }
-        foreach (char caractere in matricula)//Verifica se cada carectere da string é um número
+        foreach (char caractere in matricula)
         {
             if (!char.IsDigit(caractere))
             {
@@ -35,7 +33,6 @@ public class Membro
             }
         }
 
-        //Se passou nas validações, atribuimos os valores
         Nome = nome;
         Matricula = matricula;
     }

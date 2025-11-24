@@ -31,7 +31,6 @@ class Program
                 {
                     try
                     {
-                        // 1. Dados comuns a todos os jogos
                         Console.Write("\nNome do Jogo (ou digite '0' para voltar): ");
                         string nome = Console.ReadLine();
                         if (nome == "0") break;
@@ -42,7 +41,6 @@ class Program
                         Console.Write("Ano de Lançamento: ");
                         int ano = Convert.ToInt32(Console.ReadLine());
 
-                        // 2. Pergunta o Tipo (Aqui entra a Herança/Polimorfismo)
                         Console.WriteLine("\nSelecione o Tipo de Jogo:");
                         Console.WriteLine("1 - Comum");
                         Console.WriteLine("2 - Premium (Lançamento/Raro)");
@@ -50,7 +48,6 @@ class Program
                         Console.Write("Tipo: ");
                         string tipo = Console.ReadLine();
 
-                        // Variável polimórfica: 'novoJogo' pode ser qualquer um dos 3 tipos!
                         Jogo novoJogo = null;
 
                         if (tipo == "1")
@@ -73,7 +70,6 @@ class Program
                             novoJogo = new Jogo(nome, fabricante, ano);
                         }
 
-                        // 3. Adiciona à lista (Polimorfismo: a lista aceita filhos de Jogo)
                         biblioteca.Jogos.Add(novoJogo);
                         Console.WriteLine($"\nJogo '{novoJogo.Nome}' cadastrado com sucesso!");
                         Console.ReadKey();
@@ -89,7 +85,6 @@ class Program
                 Console.WriteLine("---Cadastro de Novo Membro---");
                 while (true)
                 {
-                    // [AV1-5]
                     try
                     {
                         Console.Write("\nNome do Membro (ou digite '0' para voltar): ");
@@ -123,7 +118,6 @@ class Program
             {
                 while (true)
                 {
-                    // [AV1-5]
                     try
                     {
                         Console.Clear();
@@ -163,7 +157,6 @@ class Program
             {
                 while (true)
                 {
-                    // [AV1-5]
                     try
                     {
                         Console.Clear();
@@ -195,8 +188,6 @@ class Program
             }
             else if (opcao == "7")
             {
-                // Agora o RelatorioService cuida de tudo!
-                // Ele vai listar os empréstimos e mostrar as datas calculadas (3 ou 7 dias).
                 relatorioService.ListarEmprestimos(biblioteca.Emprestimos);
             }
             else if (opcao == "0")
