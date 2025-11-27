@@ -9,10 +9,14 @@ Este projeto corresponde à entrega da **AV2**, construída sobre a base da AV1,
 ## 👥 Integrantes
 
 | Nome | Matrícula |
+| :--- | :--- |
 | Lucas Gabriel Simões Marinho | 06009936 |
 | Julia Scarpi Campos | 06006846 |
 | Flora Martins Di Risio Pinheiro | 06010591 |
 | Emanuel De Oliveira Freitas Branco | 06010524 |
+| Carlos Eduardo Mendes Quintella | 06011992|
+| Arthur Martins | 06012635 |
+
 
 ## 🛠️ Funcionalidades do Sistema
 
@@ -58,10 +62,10 @@ dotnet run
 
 ## 📋 Artefatos e Marcações da AV2
 
-Conforme solicitado nos critérios de avaliação, aqui estão os guias para os artefatos e marcações de código.
-
 ### 1. Diagrama UML
 
+___
+```mermaid
 classDiagram
     class Biblioteca {
         +List~Jogo~ Jogos
@@ -127,17 +131,21 @@ classDiagram
     RelatorioService ..> Membro : usa
     RelatorioService ..> Emprestimo : usa
 
+```
+
 ### 2. Vídeo de Apresentação
 
-O vídeo de demonstração do sistema (duração máxima de 10 minutos) está disponível no link abaixo:
+O vídeo de demonstração do sistema está disponível no link:
 INSERIRAQUI
 
-🔍 Guia de Correção e Marcações
 
-Critério / Marcação,Descrição,Arquivo,Onde Encontrar
-[AV2-1],Modelagem e Service,RelatorioService.cs,Classe completa
-[AV2-2],Herança (Premium),JogoPremium.cs,Definição da classe
-[AV2-2],Herança (Expansão),JogoExpansao.cs,Definição da classe
-[AV2-4],Polimorfismo (Base),Jogo.cs,Propriedade virtual
-[AV2-4],Polimorfismo (Override),JogoPremium.cs,Propriedade override
-[AV2-4],Polimorfismo (Uso),Emprestimo.cs,Construtor (Cálculo de data)
+### 🔍 Guia de Correção e Marcações
+
+Critério|Descrição|Arquivo|Onde Encontrar
+| :--- | :--- | :--- | :--- |
+[AV2-1]|Modelagem e Service|RelatorioService.cs|Classe completa
+[AV2-2]|Herança (Premium)|JogoPremium.cs|Definição da classe
+[AV2-2]|Herança (Expansão)|JogoExpansao.cs|Definição da classe
+[AV2-4]|Polimorfismo (Base)|Jogo.cs|Propriedade virtual
+[AV2-4]|Polimorfismo (Override)|JogoPremium.cs|Propriedade override
+[AV2-4]|Polimorfismo (Uso)|Emprestimo.cs|Construtor (Cálculo de data)
