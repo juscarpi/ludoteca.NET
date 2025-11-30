@@ -136,7 +136,7 @@ classDiagram
 ### 2. Vídeo de Apresentação
 
 O vídeo de demonstração do sistema está disponível no link:
-INSERIRAQUI
+https://youtu.be/ITCGn71gzx4?si=JwjlwcKySYODXoya
 
 
 ### 🔍 Guia de Correção e Marcações
